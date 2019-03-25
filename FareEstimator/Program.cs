@@ -14,16 +14,16 @@ namespace FareEstimator
             int cars =  fare.Cars();
 
             Console.WriteLine("Enter travel time. ");
-            int time = fare.TravelTime();
+            int time = fare.Travel();
 
             Console.WriteLine("Enter travel distance. ");
-            int Distance = fare.TravelDistance();
+            int Distance = fare.Travel();
 
             Console.WriteLine("Enter cost per minute. " + cars + " times");
-            double[] CPMinute = fare.CostPerMinute(cars);
+            double[] CPMinute = fare.Cost(cars);
 
             Console.WriteLine("Enter cost per mile. " + cars + " times");
-            double[] CPMile = fare.CostPerMile(cars);
+            double[] CPMile = fare.Cost(cars);
 
             for (var i = 0; i < CPMile.Length; i++)
             {
@@ -44,33 +44,17 @@ namespace FareEstimator
             return total;
         }
         
-        public int TravelTime()
+        public int Travel()
         {
             return Convert.ToInt32(Console.ReadLine());
         }
 
-        public int TravelDistance()
-        {         
-            return Convert.ToInt32(Console.ReadLine());
-        }
-
-        public double[] CostPerMinute(int cars)
+        public double[] Cost(int cars)
         {
             double[] costs = new double[cars];
 
             for (var i = 0; i < costs.Length; i++)
             {             
-                costs[i] = Convert.ToDouble(Console.ReadLine());
-            }
-            return costs;
-        }
-
-        public double[] CostPerMile(int cars)
-        {
-            double[] costs = new double[cars];
-
-            for (var i = 0; i < costs.Length; i++)
-            {
                 costs[i] = Convert.ToDouble(Console.ReadLine());
             }
             return costs;
